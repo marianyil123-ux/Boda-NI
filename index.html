@@ -33,48 +33,101 @@ body {
 }
 p { margin: 5px; }
 
-/* --- PANTALLA INICIAL --- */
-#pantalla-inicial {
-    position: fixed;
-    inset: 0;
-    background: url("ronda-portada.jpg") no-repeat center top;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    z-index: 9999;
-    transition: opacity 1s;
-    padding: 0;
+/* --- PANTALLA INICIAL CENTRADA --- */
+#pantalla-inicial{
+    position:fixed;
+    inset:0;
+    background:url("ronda-portada.jpg") no-repeat center top;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center; /* ahora el contenido está centrado verticalmente */
+    text-align:center;
+    z-index:9999;
+    transition:opacity 1s;
+    padding-top:0; /* quitar padding extra */
 }
-#pantalla-inicial p {
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: 1.2em;
-    margin: 0;
+
+#pantalla-inicial p{
+    color:#fff;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:1.2em;
 }
-.boton-inicial {
-   
-margin-top: 60vh; /* sube a 60% de la altura de la ventana */
-    padding: 12px 25px;
-    border-radius: 30px;
-    ...
+
+/* Botón abrir invitación transparente con efecto vibrante */
+.boton-inicial{
+    margin-top:40px; /* un poco de espacio debajo del texto */
+    padding:12px 25px;
+    border-radius:30px;
+    border:1px solid #fff;
+    background:transparent;
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+    animation:vibrar 1s infinite;
 }
-    background: transparent;
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
+
+@media(max-width:480px){
+    #pantalla-inicial{
+        justify-content:center; /* también centrado en móviles */
+    }
+
+    .boton-inicial{
+        margin-top:30px; /* espacio un poco menor en móviles */
+        padding:12px 20px;
+        font-size:1em;
+    }
+
+}
+
+@keyframes vibrar{
+    0%,100%{transform:translateY(0);}
+    25%{transform:translateY(-3px);}
+    50%{transform:translateY(2px);}
+    75%{transform:translateY(-2px);}
+}
+
+.boton-inicial:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* RESPONSIVE: Móviles */
+@media(max-width:480px){
+    #pantalla-inicial{
+        justify-content:flex-start;
+        padding-top:20px;
+    }
+
+    .boton-inicial{
+        margin-top:50vh; /* se adapta a la pantalla móvil */
+        padding:12px 20px;
+        font-size:1em;
+    }
+.boton-copiar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
-    animation: vibrar 1s infinite;
-}
-.boton-inicial:hover {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 30px; /* hace el botón redondeado */
+    border: 1px solid #000;
     background: #fff;
     color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.boton-copiar:hover {
+    background: #000;
+    color: #fff;
 }
 
 /* --- SECCIONES INVITACIÓN --- */
@@ -470,4 +523,4 @@ function copiarIBAN() {
 }
 </script>
 </body>
-</html>
+                                                             </html>

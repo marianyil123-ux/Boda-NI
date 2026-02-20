@@ -448,25 +448,27 @@ function abrirInvitacion(e){
 }
 
 // FLECHA
-function mostrarFlecha(){ const f=document.getElementById("flecha"); f.style.display="flex"; setTimeout(()=>{f.style.opacity="1";},50);}
-function scrollAbajo(){ document.querySelector("section").scrollIntoView({behavior:"smooth"});}
-
-// FLECHA DESAPARECE
-const flecha=document.getElementById("flecha");
-const primeraSeccion=document.querySelector("section");
-window.addEventListener("scroll",()=>{
-  const pos=primeraSeccion.getBoundingClientRect().top;
-  if(pos<=window.innerHeight/2){ flecha.style.opacity="0"; setTimeout(()=>{flecha.style.display="none";},500);}
-  else{ if(flecha.style.display==="none"){ flecha.style.display="flex"; setTimeout(()=>{flecha.style.opacity="1";},50);} }
-});
+function mostrarFlecha(){ 
+    const f=document.getElementById("flecha"); 
+    f.style.display="flex"; 
+    setTimeout(()=>{f.style.opacity="1";},50);
+}
+function scrollAbajo(){ 
+    document.querySelector("section").scrollIntoView({behavior:"smooth"});
+}
 
 // CUENTA ATRÁS
 const fechaBoda=new Date(2026,6,11,0,0,0).getTime();
 setInterval(function(){
   const ahora=new Date().getTime();
   const diff=fechaBoda-ahora;
-  if(diff<=0){ document.getElementById("d").innerText=0; document.getElementById("h").innerText=0;
-    document.getElementById("m").innerText=0; document.getElementById("s").innerText=0; return;}
+  if(diff<=0){ 
+      document.getElementById("d").innerText=0; 
+      document.getElementById("h").innerText=0;
+      document.getElementById("m").innerText=0; 
+      document.getElementById("s").innerText=0; 
+      return;
+  }
   document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
   document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
   document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
@@ -482,6 +484,4 @@ function copiarIBAN() {
         }, 2000);
     });
 }
-</script>
-</body>
-                                              </html>
+        </script>

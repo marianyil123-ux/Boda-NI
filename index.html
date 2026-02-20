@@ -14,6 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://marianyil123-ux.github.io/Boda-NI/">
 <meta property="og:type" content="website">
+
 <meta name="description" content="Invitación de boda de Nerea e Iñaki. 11 de Julio de 2026 en Ronda, Málaga.">
 <link rel="canonical" href="https://marianyil123-ux.github.io/Boda-NI/">
 
@@ -23,15 +24,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
-/* --- GLOBAL --- */
-body {
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    background: #fff;
-    color: #000;
-    text-align: center;
+/* GLOBAL */
+body{
+    margin:0;
+    font-family:'Cormorant Garamond', serif;
+    background:#fff;
+    color:#000;
+    text-align:center;
 }
-p { margin: 5px; }
+p{margin:5px;}
 
 /* --- PANTALLA INICIAL CENTRADA --- */
 #pantalla-inicial{
@@ -129,162 +130,191 @@ p { margin: 5px; }
     background: #000;
     color: #fff;
 }
+/* SECCIONES INVITACIÓN */
+section{
+    padding:50px 20px;
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
+    background:#fefefe;
+    margin:0 0 25px 0;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
 
-/* --- SECCIONES INVITACIÓN --- */
-section {
-    padding: 50px 20px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-    background: #fefefe;
-    margin: 0 0 25px 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+h2{
+    text-transform:uppercase;
+    font-family:'Cormorant Garamond', serif;
+    margin-bottom:20px;
+    letter-spacing:2px;
+    font-size:1.6em;
 }
 
-h2 {
-    text-transform: uppercase;
-    font-family: 'Cormorant Garamond', serif;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    font-size: 1.6em;
+.iniciales{
+    font-size:3em;
+    font-family:'Playfair Display', serif;
+    letter-spacing:10px;
+    margin-bottom:10px;
+    color:#000;
 }
-.iniciales {
-    font-size: 3em;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 10px;
-    margin-bottom: 10px;
-    color: #000;
+
+.separador{
+    font-size:2em;
+    margin:0 10px;
 }
-.separador {
-    font-size: 2em;
-    margin: 0 10px;
+
+#fecha-inicial{
+    font-weight:500;
+    margin-bottom:20px;
 }
-#fecha-inicial {
-    font-weight: 500;
-    margin-bottom: 20px;
+
+.cuenta-atras{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
 }
-.cuenta-atras {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 25px;
-    flex-wrap: wrap;
+.caja{
+    min-width:60px;
+    background:rgba(255,255,255,0.9);
+    padding:12px 8px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
-.caja {
-    min-width: 60px;
-    background: rgba(255,255,255,0.9);
-    padding: 12px 8px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.caja strong{
+    font-size:1.5em;
+    display:block;
 }
-.caja strong {
-    font-size: 1.5em;
-    display: block;
-}
-#foto-invitacion {
-    max-width: 90%;
-    border-radius: 10px;
-    margin-top: 25px;
+
+#foto-invitacion{
+    max-width:90%;
+    border-radius:10px;
+    margin-top:25px;
 }
 
 /* BOTONES */
-.boton-maps, .boton-whatsapp, .boton, .boton-copiar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 1px solid #000;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-    cursor: pointer;
+.boton-maps,.boton-whatsapp,.boton{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:10px;
+    padding:10px 20px;
+    border-radius:30px;
+    border:1px solid #000;
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
 }
-.boton-maps:hover, .boton-whatsapp:hover, .boton:hover, .boton-copiar:hover {
-    background: #000;
-    color: #fff;
+.boton-maps:hover,.boton-whatsapp:hover,.boton:hover{
+    background:#000;
+    color:#fff;
 }
-.boton, .boton-maps, .boton-whatsapp, .boton-copiar, .boton-inicial {
-    -webkit-tap-highlight-color: transparent;
-    outline: none !important;
-    box-shadow: none !important;
+/* Quitar destello azul al tocar botones */
+.boton-inicial,
+.boton {
+    -webkit-tap-highlight-color: transparent; /* elimina el color de toque en móviles */
+    outline: none; /* elimina borde al hacer focus */
 }
-
 /* FLECHA SCROLL */
-.flecha-scroll {
-    position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.1);
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.5s;
+.flecha-scroll{
+    position:fixed;
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background-color:rgba(0,0,0,0.1);
+    cursor:pointer;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:opacity 0.5s;
 }
-.flecha-scroll svg {
-    width: 20px;
-    height: 20px;
-    stroke: #000;
-}
-
-/* UBICACIÓN */
-.ubicacion-img, .ceremonia, .celebracion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.ceremonia iframe, .celebracion iframe {
-    width: 100%;
-    height: 250px;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 10px;
+.flecha-scroll svg{
+    width:20px;
+    height:20px;
+    stroke:#000000;
 }
 
-/* PLANES */
-.planes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-.plan-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    width: 250px;
-    padding: 20px;
+/* RESPONSIVE Y CENTRADO VERTICAL */
+@media(max-width:480px){
+    #pantalla-inicial{
+        justify-content:flex-start;
+        padding-top:20px;
+    }
+
+    #invitation{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:30px 15px;
+    }
+
+    #foto-invitacion{
+        max-width:95%;
+        height:auto;
+        margin-top:20px;
+        border-radius:10px;
+    }
+
+    .cuenta-atras{
+        gap:8px;
+        margin-top:20px;
+    }
+
+    .iniciales{
+        font-size:2.5em;
+        letter-spacing:8px;
+    }
+
+    #fecha-inicial{
+        font-size:1em;
+        margin-bottom:15px;
+    }
+
+    .boton-inicial{
+        padding:12px 20px;
+        margin-top:40vh;
+        font-size:1em;
+    }
+
+    h2{font-size:1.3em;}
+    .caja{min-width:50px;padding:10px 5px;}
 }
 
-/* REGALO */
+/* UBICACIÓN CENTRADA */
+.ubicacion-img, .ceremonia, .celebracion{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+/* --- SECCIÓN REGALO --- */
 .regalo {
     text-align: center;
     padding: 60px 20px;
 }
+
 .texto-regalo {
     max-width: 600px;
     margin: 0 auto 30px auto;
 }
+
 .caja-regalo {
     margin: 0 auto;
     padding: 25px;
@@ -293,14 +323,16 @@ h2 {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
+
 .titulo-iban {
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
+
 .iban {
     font-family: Arial, sans-serif;
-    font-weight: 400;
+    font-weight: 400; /* No negrita */
     color: #000;
     text-decoration: none;
     font-size: 1em;
@@ -313,33 +345,39 @@ h2 {
     font-size: 0.85em;
     color: #777;
 }
+/* Footer dentro de la sección regalo pero separado de la caja */
 .regalo footer {
-    margin-top: 30px;
+    margin-top: 30px;      /* separa del IBAN */
     font-size: 1em;
     color: #555;
     font-style: italic;
-    text-align: center;
+    text-align: center;     /* centrado horizontal */
 }
-
-/* RESPONSIVE */
-@media(max-width:480px){
-    #pantalla-inicial { justify-content: flex-start; padding-top: 20px; }
-    .boton-inicial { margin-top: 40vh; padding: 12px 20px; font-size: 1em; }
-    #invitation { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 15px; }
-    #foto-invitacion { max-width: 95%; height: auto; margin-top: 20px; border-radius: 10px; }
-    .cuenta-atras { gap: 8px; margin-top: 20px; }
-    .iniciales { font-size: 2.5em; letter-spacing: 8px; }
-    #fecha-inicial { font-size: 1em; margin-bottom: 15px; }
-    h2 { font-size: 1.3em; }
-    .caja { min-width: 50px; padding: 10px 5px; }
-}
-
-/* ANIMACIONES */
-@keyframes vibrar {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  50% { transform: translateX(2px); }
-  75% { transform: translateX(-2px); }
+/* --- Quitar destellos de todos los botones y enlaces tipo botón --- */
+.boton,
+.boton-maps,
+.boton-whatsapp,
+.boton-copiar,
+.boton-inicial,
+.boton:focus,
+.boton-maps:focus,
+.boton-whatsapp:focus,
+.boton-copiar:focus,
+.boton-inicial:focus,
+.boton:active,
+.boton-maps:active,
+.boton-whatsapp:active,
+.boton-copiar:active,
+.boton-inicial:active,
+.boton:focus-visible,
+.boton-maps:focus-visible,
+.boton-whatsapp:focus-visible,
+.boton-copiar:focus-visible,
+.boton-inicial:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
 }
 </style>
 </head>
@@ -348,7 +386,7 @@ h2 {
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
     <p>¡EL DÍA SE ACERCA!</p>
-    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)" aria-label="Abrir invitación">ABRIR INVITACIÓN</a>
+    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
 </div>
 
 <!-- INVITACIÓN -->
@@ -364,33 +402,36 @@ h2 {
     <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación" loading="lazy">
 </section>
 
-<!-- SECCIONES -->
+<!-- SECCIONES: PROGRAMA, CONFIRMA, UBICACIÓN, PLANES, CONTACTO, REGALO -->
 <section>
     <h2>PROGRAMA</h2>
     <p>Os compartimos cómo será nuestro día para que podáis organizaros mejor.</p>
-    <img src="programa.PNG" alt="Programa boda" loading="lazy" class="programa-img">
+<img src="programa.PNG" 
+     alt="Programa boda" 
+     loading="lazy" 
+     style="max-width:90%; margin-top:20px; border-radius:10px;">
 </section>
 
 <section>
     <h2>CONFIRMA TU ASISTENCIA</h2>
     <p>Nos encantaría contar contigo en nuestro día. Por favor, confirma tu asistencia antes del <strong>21 de Marzo de 2026</strong>.</p>
-    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank" aria-label="Confirmar asistencia">CONFIRMAR ASISTENCIA</a>
+    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank">CONFIRMAR ASISTENCIA</a>
 </section>
 
 <section>
     <h2>UBICACIÓN</h2>
-    <p class="ubicacion-texto">Nos casamos en la preciosa ciudad de Ronda.</p>
+    <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
     <div class="ubicacion-img">
-        <img src="ronda.jpg" alt="Ronda" loading="lazy">
+  <img src="ronda.jpg" alt="Ronda" loading="lazy" style="max-width:90%; margin-top:15px; border-radius:10px;">
         <div class="ceremonia">
             <h3>Ceremonia</h3>
             <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-            <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
         </div>
-        <div class="celebracion">
+        <div class="celebracion" style="margin-top:15px;">
             <h3>Celebración</h3>
             <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-            <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
         </div>
     </div>
 </section>
@@ -398,52 +439,64 @@ h2 {
 <section>
     <h2>PLANES IMPRESCINDIBLES EN RONDA</h2>
     <p>No te pierdas estos lugares y experiencias:</p>
-    <div class="planes-container">
-        <div class="plan-item">
-            <p><strong>Puente Nuevo</strong></p>
-            <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
-            <a href="https://www.google.com/maps?q=El+Tajo+de+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps" aria-label="Ver Puente Nuevo en Google Maps">Ver en Google Maps</a>
-        </div>
-        <div class="plan-item">
-            <p><strong>Casa del Rey Moro</strong></p>
-            <p>La Casa del Rey Moro con la Mina de Agua de época musulmana, la Casa de estilo Neomudéjar y el Jardín diseñado por Forestier.</p>
-            <a href="https://www.google.com/maps?q=Casa+del+Rey+Moro+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps" aria-label="Ver Casa del Rey Moro en Google Maps">Ver en Google Maps</a>
-        </div>
-        <div class="plan-item">
-            <p><strong>Plaza de Toros</strong></p>
-            <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
-            <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps" aria-label="Ver Plaza de Toros en Google Maps">Ver en Google Maps</a>
-        </div>
-        <div class="plan-item">
-            <p><strong>Alameda de Ronda</strong></p>
-            <p>Un parque ideal para pasear y disfrutar de vistas de la ciudad y el Tajo.</p>
-            <a href="https://www.google.com/maps?q=Alameda+de+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps" aria-label="Ver Alameda de Ronda en Google Maps">Ver en Google Maps</a>
-        </div>
-        <div class="plan-item">
-            <p><strong>Bar El Lechuguita</strong></p>
-            <p>Uno de los bares más auténticos de Ronda, ideal para tapas y ambiente local.</p>
-            <a href="https://www.google.com/maps?q=Bar+El+Lechuguita+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps" aria-label="Ver Bar El Lechuguita en Google Maps">Ver en Google Maps</a>
-        </div>
-        <div class="plan-item">
-            <p><strong>Churrería Alba</strong></p>
-            <p>Perfecta para probar los churros y dulces típicos de Ronda.</p>
-            <a href="https://www.google.com/maps?q=Churrería+Alba+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps" aria-label="Ver Churrería Alba en Google Maps">Ver en Google Maps</a>
-        </div>
-    </div>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
+  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+  <p><strong>Puente Nuevo</strong></p>
+<p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
+<a  href="https://www.google.com/maps/place/El+Tajo+de+Ronda,+C.+Armi%C3%B1%C3%A1n,+3,+29400+Ronda,+M%C3%A1laga/@36.7406982,-5.165843,15z/data=!4m6!3m5!1s0xd0d3138c61c2951:0x8d3fc263e952b0dd!8m2!3d36.7406982!4d-5.165843!16s%2Fg%2F11g9vz8mjm?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIJvbDyoASAJQAQ%3D%3D" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="boton-maps">
+   Ver en Google Maps
+</a>
+</div>
+<div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+ <p><strong>Casa del Rey Moro</strong></p>
+    <p>La Casa del Rey Moro con la Mina de Agua de época musulmana, la Casa de estilo Neomudéjar y el Jardín diseñado por Forestier.</p>
+<a  href="https://www.google.com/maps/place/Casa+del+Rey+Moro,+C.+Cta.+de+Santo+Domingo,+9,+29400+Ronda,+M%C3%A1laga/@36.739841,-5.164358,15z/data=!4m6!3m5!1s0xd0d313f52395cc3:0xcd26a8d25ead3ffb!8m2!3d36.739841!4d-5.164358!16s%2Fg%2F120hthd8?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIOC7DCoASAJQAQ%3D%3D"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="boton-maps">
+   Ver en Google Maps
+</a>
+</div>
+
+<div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+
+    <p><strong>Plaza de Toros</strong></p>
+    <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
+    <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
+  </div>
+  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+    <p><strong>Alameda de Ronda</strong></p>
+    <p>Un parque ideal para pasear y disfrutar de vistas de la ciudad y el Tajo.</p>
+    <a href="https://www.google.com/maps?q=Alameda+de+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
+  </div>
+  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+    <p><strong>Bar El Lechuguita</strong></p>
+    <p>Uno de los bares más auténticos de Ronda, ideal para tapas y ambiente local.</p>
+    <a href="https://www.google.com/maps?q=Bar+El+Lechuguita+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
+  </div>
+  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+    <p><strong>Churrería Alba</strong></p>
+    <p>Perfecta para probar los churros y dulces típicos de Ronda.</p>
+    <a href="https://www.google.com/maps?q=Churrería+Alba+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
+  </div>
+</div>
 </section>
 
 <section>
-    <h2>CONTACTO</h2>
-    <p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, aquí tienes nuestros números:</p>
-    <div class="contacto-container">
-        <p><strong>Iñaki Salaberria</strong></p>
-        <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank" aria-label="Escribir a Iñaki por WhatsApp">💬 Escribir por WhatsApp</a>
+<h2>CONTACTO</h2>
+<p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, aquí tienes nuestros números:</p>
+<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:left;">
+<p><strong>Iñaki Salaberria</strong></p>
+<a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 Escribir por WhatsApp</a>
 
-        <p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
-        <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank" aria-label="Escribir a Nerea por WhatsApp">💬 Escribir por WhatsApp</a>
-    </div>
+<p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
+<a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 Escribir por WhatsApp</a>
+</div>
 </section>
-   
+
 <section class="regalo">
     <h2>REGALO</h2>
     <p class="texto-regalo">
@@ -523,4 +576,4 @@ function copiarIBAN() {
 }
 </script>
 </body>
-                                                             </html>
+    </html>

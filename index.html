@@ -284,6 +284,14 @@ h2{
     font-size: 0.85em;
     color: #777;
 }
+/* Footer dentro de la sección regalo pero separado de la caja */
+.regalo footer {
+    margin-top: 30px;      /* separa del IBAN */
+    font-size: 1em;
+    color: #555;
+    font-style: italic;
+    text-align: center;     /* centrado horizontal */
+}
 </style>
 </head>
 <body>
@@ -399,9 +407,10 @@ h2{
 
         <p class="gracias" id="mensajeCopiado"></p>
     </div>
-</section>
 
-<footer>Con mucho cariño, os esperamos</footer>
+    <!-- Footer fuera de la caja, pero dentro de la sección -->
+    <footer>Con mucho cariño, os esperamos</footer>
+</section>
 
 <div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -460,4 +469,4 @@ function copiarIBAN() {
 }
 </script>
 </body>
-</html>
+    </html>

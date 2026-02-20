@@ -67,7 +67,25 @@ p{margin:5px;}
     background:#fff;
     color:#000;
 }
-
+.boton-copiar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 30px; /* hace el botón redondeado */
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.boton-copiar:hover {
+    background: #000;
+    color: #fff;
+}
 /* SECCIONES INVITACIÓN */
 section{
     padding:50px 20px;
@@ -277,15 +295,15 @@ h2{
 }
 
 /* REGALO - IBAN */
-.iban{
-    font-family: Arial, sans-serif; /* Cambiado a Arial */
-    font-weight:400;
-    color:#000;
-    text-decoration:none;
-    font-size:1em;
-    letter-spacing: 1px; /* opcional, mantiene espacio entre números */
-    white-space: nowrap; /* evita que se rompa en varias líneas */
-    overflow-x: auto;    /* si la pantalla es muy pequeña, deja scroll horizontal */
+.iban {
+    font-family: Arial, sans-serif;
+    font-weight: 400; /* No negrita */
+    color: #000;
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow-x: auto;
     text-align: center;
 }
 .gracias {

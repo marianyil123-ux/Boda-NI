@@ -34,7 +34,7 @@ body{
 }
 p{margin:5px;}
 
-/* PANTALLA INICIAL */
+/* --- PANTALLA INICIAL --- */
 #pantalla-inicial{
     position:fixed;
     inset:0;
@@ -44,11 +44,12 @@ p{margin:5px;}
     flex-direction:column;
     align-items:center;
     justify-content:flex-start; /* inicio superior */
-    padding-top:40px;
+    padding-top:60px; /* espacio superior */
     z-index:9999;
     transition:opacity 1s;
     text-align:center;
 }
+
 #pantalla-inicial p{
     color:#fff;
     font-weight:600;
@@ -58,7 +59,7 @@ p{margin:5px;}
 
 /* Botón abrir invitación transparente con efecto vibrante */
 .boton-inicial{
-    margin-top:75px;
+    margin-top:150px; /* ↑ mueve el botón más abajo */
     padding:12px 25px;
     border-radius:30px;
     border:1px solid #fff;
@@ -72,16 +73,31 @@ p{margin:5px;}
     transition:0.3s;
     animation:vibrar 1s infinite;
 }
+
 @keyframes vibrar{
     0%,100%{transform:translateY(0);}
     25%{transform:translateY(-3px);}
     50%{transform:translateY(2px);}
     75%{transform:translateY(-2px);}
 }
+
 .boton-inicial:hover{
     background:#fff;
     color:#000;
 }
+
+/* RESPONSIVE: Móviles */
+@media(max-width:480px){
+    #pantalla-inicial{
+        justify-content:flex-start;
+        padding-top:20px;
+    }
+
+    .boton-inicial{
+        margin-top:50vh; /* se adapta a la pantalla móvil */
+        padding:12px 20px;
+        font-size:1em;
+    }
 .boton-copiar {
     display: inline-flex;
     align-items: center;

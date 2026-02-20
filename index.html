@@ -245,6 +245,42 @@ h2{
     text-decoration:none;
     font-size:1em;
 }
+/* --- SECCIÓN REGALO --- */
+.regalo {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.texto-regalo {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.caja-regalo {
+    margin: 0 auto;
+    padding: 25px;
+    background: white;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.titulo-iban {
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.iban {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.gracias {
+    font-size: 0.85em;
+    color: #777;
+}
 </style>
 </head>
 <body>
@@ -343,14 +379,23 @@ h2{
 </div>
 </section>
 
-<section>
-<h2>REGALO</h2>
-<p>Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.</p>
-<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-<p><strong>IBAN</strong></p>
-<p class="iban">ES00 0000 0000 0000 0000 0000</p>
-<p style="font-size:0.8em;color:#555;">¡Gracias!</p>
-</div>
+<section class="regalo">
+    <h2>REGALO</h2>
+    <p class="texto-regalo">
+        Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros,
+        podéis ayudarnos a comenzar esta nueva etapa.
+    </p>
+
+    <div class="caja-regalo">
+        <p class="titulo-iban">IBAN</p>
+        <p class="iban" id="ibanTexto">ES00 0000 0000 0000 0000 0000</p>
+
+        <button class="boton-copiar" onclick="copiarIBAN()">
+            Copiar IBAN
+        </button>
+
+        <p class="gracias" id="mensajeCopiado"></p>
+    </div>
 </section>
 
 <footer>Con mucho cariño, os esperamos</footer>
@@ -401,6 +446,15 @@ setInterval(function(){
   document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
   document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
 },1000);
+function copiarIBAN() {
+    const texto = document.getElementById("ibanTexto").innerText;
+    navigator.clipboard.writeText(texto).then(function() {
+        document.getElementById("mensajeCopiado").innerText = "IBAN copiado ✔";
+        setTimeout(() => {
+            document.getElementById("mensajeCopiado").innerText = "";
+        }, 2000);
+    });
+}
 </script>
 </body>
-</html>
+    </html>

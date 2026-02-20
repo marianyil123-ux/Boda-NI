@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO Open Graph para WhatsApp -->
+<title>Nerea & Iñaki - 11 Julio 2026</title>
+
+<!-- Color barra navegador -->
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- SEO Open Graph (WhatsApp) -->
+<meta property="og:title" content="Nerea & Iñaki - 11 Julio 2026">
+<meta property="og:description" content="Toca para descubrir nuestra invitación de boda">
 <meta property="og:image" content="https://raw.githubusercontent.com/BodaIyN/IyN/main/ronda-portada.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://bodaiyn.github.io/IyN/">
 <meta property="og:type" content="website">
 
-<!-- SEO básico para buscadores -->
-<meta name="description" content="Toca para descubrir nuestra invitación de boda">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- SEO buscadores -->
+<meta name="description" content="Invitación de boda de Nerea & Iñaki - 11 Julio 2026 en Ronda">
 <link rel="canonical" href="https://bodaiyn.github.io/IyN/">
 
 <!-- Fuentes -->
@@ -22,30 +33,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
-body{
+
+/* RESET LIMPIO */
+html, body{
     margin:0;
+    padding:0;
+    height:100%;
+    overflow-x:hidden;
     font-family:'Cormorant Garamond', serif;
     background:#fff;
     color:#000;
     text-align:center;
 }
-p{margin:5px;}
 
-/* --- PANTALLA INICIAL CENTRADA --- */
+/* PANTALLA INICIAL FULL REAL */
 #pantalla-inicial{
     position:fixed;
     inset:0;
-    background:url("ronda-portada.jpg") no-repeat center top;
+    height:100dvh; /* mejor que 100vh en móviles modernos */
+    background:url("ronda-portada.jpg") no-repeat center center;
     background-size:cover;
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center; /* ahora el contenido está centrado verticalmente */
-    text-align:center;
+    justify-content:center;
     z-index:9999;
     transition:opacity 1s;
-    padding-top:0; /* quitar padding extra */
 }
 
 #pantalla-inicial p{
@@ -55,9 +68,8 @@ p{margin:5px;}
     font-size:1.2em;
 }
 
-/* Botón abrir invitación transparente con efecto vibrante */
 .boton-inicial{
-    margin-top:40px; /* un poco de espacio debajo del texto */
+    margin-top:40px;
     padding:12px 25px;
     border-radius:30px;
     border:1px solid #fff;
@@ -68,38 +80,13 @@ p{margin:5px;}
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    transition:0.3s;
-    animation:vibrar 1s infinite;
-}
-
-@media(max-width:480px){
-    #pantalla-inicial{
-        justify-content:center; /* también centrado en móviles */
-    }
-
-    .boton-inicial{
-    margin-top:120px;   /* ← esto lo baja más */
-    padding:12px 25px;
-    border-radius:30px;
-    border:1px solid #fff;
-    background:transparent;
-    color:#fff;
-    font-weight:600;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    transition:0.3s;
-    animation:vibrar 1s infinite;
-    }
-
+    animation:vibrar 1.2s infinite;
+    -webkit-tap-highlight-color:transparent;
 }
 
 @keyframes vibrar{
     0%,100%{transform:translateY(0);}
-    25%{transform:translateY(-3px);}
-    50%{transform:translateY(2px);}
-    75%{transform:translateY(-2px);}
+    50%{transform:translateY(-3px);}
 }
 
 .boton-inicial:hover{
@@ -107,50 +94,11 @@ p{margin:5px;}
     color:#000;
 }
 
-/* RESPONSIVE: Móviles */
-@media(max-width:480px){
-    #pantalla-inicial{
-        justify-content:flex-start;
-        padding-top:20px;
-    }
-
-    .boton-inicial{
-        margin-top:50vh; /* se adapta a la pantalla móvil */
-        padding:12px 20px;
-        font-size:1em;
-    }
-.boton-copiar {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 30px; /* hace el botón redondeado */
-    border: 1px solid #000;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.boton-copiar:hover {
-    background: #000;
-    color: #fff;
-}
-/* Quitar fondo gris al pulsar enlaces en móviles */
-.boton-maps:active,
-.boton-maps:focus,
-.boton-maps:focus-visible {
-    background: #fff !important;
-    color: #000 !important;
-
-}
-/* SECCIONES INVITACIÓN */
+/* SECCIONES */
 section{
     padding:50px 20px;
     opacity:0;
-    transform:translateY(50px);
+    transform:translateY(40px);
     transition:all 0.8s ease;
     background:#fefefe;
     margin:0 0 25px 0;
@@ -160,6 +108,7 @@ section{
     margin-left:auto;
     margin-right:auto;
 }
+
 section.visible{
     opacity:1;
     transform:translateY(0);
@@ -167,57 +116,15 @@ section.visible{
 
 h2{
     text-transform:uppercase;
-    font-family:'Cormorant Garamond', serif;
-    margin-bottom:20px;
     letter-spacing:2px;
-    font-size:1.6em;
-}
-
-.iniciales{
-    font-size:3em;
-    font-family:'Playfair Display', serif;
-    letter-spacing:10px;
-    margin-bottom:10px;
-    color:#000;
-}
-
-.separador{
-    font-size:2em;
-    margin:0 10px;
-}
-
-#fecha-inicial{
-    font-weight:500;
-    margin-bottom:20px;
-}
-
-.cuenta-atras{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:25px;
-    flex-wrap:wrap;
-}
-.caja{
-    min-width:60px;
-    background:rgba(255,255,255,0.9);
-    padding:12px 8px;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-.caja strong{
     font-size:1.5em;
-    display:block;
 }
 
-#foto-invitacion{
-    max-width:90%;
-    border-radius:10px;
-    margin-top:25px;
-}
-
-/* BOTONES */
-.boton-maps{
+/* BOTONES GENERALES */
+.boton,
+.boton-maps,
+.boton-whatsapp,
+.boton-copiar{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -229,10 +136,14 @@ h2{
     color:#000;
     text-decoration:none;
     font-weight:600;
-    transition:none; /* ← quitamos animación */
+    -webkit-tap-highlight-color:transparent;
+    outline:none;
 }
-}
-.boton-maps:hover,.boton-whatsapp:hover,.boton:hover{
+
+.boton:hover,
+.boton-maps:hover,
+.boton-whatsapp:hover,
+.boton-copiar:hover{
     background:#000;
     color:#fff;
 }

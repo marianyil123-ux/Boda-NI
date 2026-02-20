@@ -157,7 +157,12 @@ h2{
     background:#000;
     color:#fff;
 }
-
+/* Quitar destello azul al tocar botones */
+.boton-inicial,
+.boton {
+    -webkit-tap-highlight-color: transparent; /* elimina el color de toque en móviles */
+    outline: none; /* elimina borde al hacer focus */
+}
 /* FLECHA SCROLL */
 .flecha-scroll{
     position:fixed;
@@ -271,15 +276,18 @@ h2{
     margin-bottom: 10px;
 }
 
-.iban {
-    font-size: 1.3em;
-    letter-spacing: 1px;
-    margin: 15px 0;
-    font-weight: 500;
+/* REGALO - IBAN */
+.iban{
+    font-family: Arial, sans-serif; /* Cambiado a Arial */
+    font-weight:400;
+    color:#000;
+    text-decoration:none;
+    font-size:1em;
+    letter-spacing: 1px; /* opcional, mantiene espacio entre números */
     white-space: nowrap; /* evita que se rompa en varias líneas */
     overflow-x: auto;    /* si la pantalla es muy pequeña, deja scroll horizontal */
     text-align: center;
-    }
+}
 .gracias {
     font-size: 0.85em;
     color: #777;

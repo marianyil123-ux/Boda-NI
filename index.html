@@ -59,7 +59,7 @@ p{margin:5px;}
 
 /* Botón abrir invitación transparente con efecto vibrante */
 .boton-inicial{
-    margin-top:50px; /* ↑ mueve el botón más abajo */
+    margin-top:200px; /* sube el valor para que el botón baje más en escritorio */
     padding:12px 25px;
     border-radius:30px;
     border:1px solid #fff;
@@ -72,6 +72,14 @@ p{margin:5px;}
     justify-content:center;
     transition:0.3s;
     animation:vibrar 1s infinite;
+}
+
+@media(max-width:480px){
+    .boton-inicial{
+        margin-top:55vh; /* baja más el botón en móviles */
+        padding:12px 20px;
+        font-size:1em;
+    }
 }
 
 @keyframes vibrar{
@@ -493,7 +501,7 @@ h2{
 
     <div class="caja-regalo">
         <p class="titulo-iban">IBAN</p>
-        <p class="iban" id="ibanTexto">ES00 0000 0000 0000 0000 0000</p>
+        <p class="iban" id="ibanTexto">ES56 0000 0000 0000 0000 0000</p>
 
         <button class="boton-copiar" onclick="copiarIBAN()">
             Copiar IBAN
@@ -563,4 +571,4 @@ function copiarIBAN() {
 }
 </script>
 </body>
-    </html>
+                </html>

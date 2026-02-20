@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nerea & Iñaki - 11 Julio 2026</title>
 
+<!-- SEO Open Graph para WhatsApp -->
+<meta property="og:title" content="Nerea & Iñaki - 11 Julio 2026">
+<meta property="og:description" content="Nos casamos en Ronda y nos encantaría que nos acompañaras en nuestro gran día.">
+<meta property="og:image" content="https://marianyil123-ux.github.io/Boda-NI/ronda-portada.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://marianyil123-ux.github.io/Boda-NI/">
+<meta property="og:type" content="website">
+
+<meta name="description" content="Invitación de boda de Nerea e Iñaki. 11 de Julio de 2026 en Ronda, Málaga.">
+<link rel="canonical" href="https://marianyil123-ux.github.io/Boda-NI/">
+
 <!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -311,6 +324,32 @@ h2{
     font-style: italic;
     text-align: center;     /* centrado horizontal */
 }
+/* --- Quitar destellos de todos los botones y enlaces tipo botón --- */
+.boton,
+.boton-maps,
+.boton-whatsapp,
+.boton-copiar,
+.boton-inicial,
+.boton:focus,
+.boton-maps:focus,
+.boton-whatsapp:focus,
+.boton-copiar:focus,
+.boton-inicial:focus,
+.boton:active,
+.boton-maps:active,
+.boton-whatsapp:active,
+.boton-copiar:active,
+.boton-inicial:active,
+.boton:focus-visible,
+.boton-maps:focus-visible,
+.boton-whatsapp:focus-visible,
+.boton-copiar:focus-visible,
+.boton-inicial:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+}
 </style>
 </head>
 <body>
@@ -331,14 +370,17 @@ h2{
         <div class="caja"><strong id="m">0</strong>MINUTOS</div>
         <div class="caja"><strong id="s">0</strong>SEGUNDOS</div>
     </div>
-    <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación">
+    <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación" loading="lazy">
 </section>
 
 <!-- SECCIONES: PROGRAMA, CONFIRMA, UBICACIÓN, PLANES, CONTACTO, REGALO -->
 <section>
     <h2>PROGRAMA</h2>
     <p>Os compartimos cómo será nuestro día para que podáis organizaros mejor.</p>
-    <img src="programa.PNG" alt="Programa boda" style="max-width:90%; margin-top:20px; border-radius:10px;">
+<img src="programa.PNG" 
+     alt="Programa boda" 
+     loading="lazy" 
+     style="max-width:90%; margin-top:20px; border-radius:10px;">
 </section>
 
 <section>
@@ -351,7 +393,7 @@ h2{
     <h2>UBICACIÓN</h2>
     <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
     <div class="ubicacion-img">
-        <img src="ronda.jpg" alt="Ronda" style="max-width:90%; margin-top:15px; border-radius:10px;">
+  <img src="ronda.jpg" alt="Ronda" loading="lazy" style="max-width:90%; margin-top:15px; border-radius:10px;">
         <div class="ceremonia">
             <h3>Ceremonia</h3>
             <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
@@ -455,7 +497,7 @@ h2{
 </svg>
 </div>
 
-<script>
+<script defer>
 // ABRIR INVITACIÓN
 function abrirInvitacion(e){
   e.preventDefault();
@@ -505,5 +547,4 @@ function copiarIBAN() {
 }
 </script>
 </body>
-</html>foto   class="boton-maps">
-   
+    </html>
